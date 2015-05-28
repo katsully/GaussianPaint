@@ -46,7 +46,7 @@ void RandomProjectApp::update()
 
 void RandomProjectApp::draw(){
     
-    //console() << currentRotation;
+    // TODO paint needs to show up at once
     // TODO have the paint fall down the canvas
     float num = (float)mGenerator->nextGaussian();
     
