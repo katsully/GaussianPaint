@@ -20,6 +20,7 @@ class PaintSpot {
         void render();
     
         ci::Color mColor;
+        float noiseCount;
         Vec2f mMouseLoc;
         Vec2f mNOff;
     
