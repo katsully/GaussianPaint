@@ -48,7 +48,6 @@ void PaintSpot::createVectors(){
 }
 
 void PaintSpot::render(){
-    
     gl::color(Color ( mColor ) );
     glBegin( GL_POLYGON );
     for(int i=0; i<21; i++){

@@ -35,17 +35,13 @@ void RandomProjectApp::mouseDown( MouseEvent event ){
     PaintSpot mPaintSpot = PaintSpot( mMouseX, mMouseY );
     mPaintSpot.createVectors();
     mPaintSpots.push_back( mPaintSpot );
-    
 }
 
 void RandomProjectApp::draw(){
-    
     // TODO have the paint fall down the canvas
     for( std::list<PaintSpot>::iterator p = mPaintSpots.begin(); p != mPaintSpots.end(); ++p ){
         p->render();
     }
-    
-    
 }
 
 CINDER_APP_NATIVE( RandomProjectApp, RendererGl )
