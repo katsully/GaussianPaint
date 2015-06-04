@@ -40,7 +40,6 @@ void RandomProjectApp::mouseDown( MouseEvent event ){
 
 void RandomProjectApp::draw(){
     
-    // TODO paint needs to show up at once
     // TODO have the paint fall down the canvas
     for( std::list<PaintSpot>::iterator p = mPaintSpots.begin(); p != mPaintSpots.end(); ++p ){
         p->render();

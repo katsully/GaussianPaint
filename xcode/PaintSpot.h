@@ -22,6 +22,7 @@ class PaintSpot {
         ci::Color mColor;
         float mX;
         float mY;
+        Vec2f mNOff;
     
         std::vector<ci::Vec2f> mVectors;
         ci::Perlin mPerlin;

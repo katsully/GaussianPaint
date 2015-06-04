@@ -17,36 +17,41 @@ PaintSpot::PaintSpot(){
 PaintSpot::PaintSpot( float mMouseX, float mMouseY ){
     mX = mMouseX;
     mY = mMouseY;
+    mNOff = Vec2f ( randFloat( 1000 ), randFloat( 1000 ) );
     mColor = Color ( CM_HSV, randFloat(), 1, 1  );
 }
 
 void PaintSpot::createVectors(){
     mVectors.clear();
-    float t = 0.0f;
+    mVectors.push_back( Vec2f( mX, mY) );
+    float x;
+    float y;
+    // TODO: seperate if statements - 1 x+,y+ 2 x+,y-, etc etc
     for( int i = 0; i < 20; i++ ){
-//        float nX = mX * 0.05f;
-//        float nY = mY * 0.05f;
-//        float nZ = t;
-//        float n = mPerlin.fBm( nX, nY, nZ );
-//        float step = n * 15.0f;
-        mVectors.push_back( Vec2f( mX + randFloat(-90, 90), mY + randFloat(-90, 90) ) );
-        //mVectors.push_back( Vec2f (mX + step, mY + step ) );
-//        t += 5.0f;
+        if( i < 5 ){
+            x = lmap( mPerlin.fBm(mNOff.x), -1.0f, 1.0f, 0.0f, mX + 200.0f );
+            y = lmap( mPerlin.fBm(mNOff.y), -1.0f, 1.0f, 0.0f, mY + 200.0f );
+        } else if (i >= 5 && i < 10 ){
+            x = lmap( mPerlin.fBm(mNOff.x), -1.0f, 1.0f, 0.0f, mX + 200.0f );
+            y = lmap( mPerlin.fBm(mNOff.y), -1.0f, 1.0f, 0.0f, mY - 200.0f );
+        } else if ( i >= 10 && i < 15 ){
+            x = lmap( mPerlin.fBm(mNOff.x), -1.0f, 1.0f, 0.0f, mX - 200.0f );
+            y = lmap( mPerlin.fBm(mNOff.y), -1.0f, 1.0f, 0.0f, mY - 200.0f );
+
+        } else {
+            x = lmap( mPerlin.fBm(mNOff.x), -1.0f, 1.0f, 0.0f, mX - 200.0f );
+            y = lmap( mPerlin.fBm(mNOff.y), -1.0f, 1.0f, 0.0f, mY + 200.0f );
+        }
+        mVectors.push_back( Vec2f( x, y ) );
+        mNOff += Vec2f( 0.01f, 0.01 );
     }
-    
 }
 
 void PaintSpot::render(){
     
     gl::color(Color ( mColor ) );
     glBegin( GL_POLYGON );
-//    gl::vertex( mVectors[0] );
-//    gl::vertex( mVectors[1] );
-//    gl::vertex( mVectors[2] );
-//    gl::vertex( mVectors[3] );
-//    gl::vertex( mVectors[4] );
-//    gl::vertex( mVectors[5] );
-    for(int i=0; i<20; i++){
+    for(int i=0; i<21; i++){
         gl::vertex( mVectors[i] );
     }
     glEnd();
