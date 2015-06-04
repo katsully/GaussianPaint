@@ -22,7 +22,7 @@ class RandomProjectApp : public AppNative {
 };
 
 void RandomProjectApp::prepareSettings( Settings *settings ){
-    settings->setWindowSize( 800, 800 );
+    settings->setWindowSize( 1000, 1000 );
 }
 
 void RandomProjectApp::setup(){

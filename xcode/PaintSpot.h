@@ -20,8 +20,7 @@ class PaintSpot {
         void render();
     
         ci::Color mColor;
-        float mX;
-        float mY;
+        Vec2f mMouseLoc;
         Vec2f mNOff;
     
         std::vector<ci::Vec2f> mVectors;
