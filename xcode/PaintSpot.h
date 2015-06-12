@@ -15,7 +15,7 @@ using namespace std;
 class PaintSpot {
     public:
         PaintSpot();
-        PaintSpot( float, float );
+        PaintSpot( Vec2f );
         void createVectors();
         void render();
     
@@ -26,4 +26,5 @@ class PaintSpot {
     
         std::vector<ci::Vec2f> mVectors;
         ci::Perlin mPerlin;
+
 };

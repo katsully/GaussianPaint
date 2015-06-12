@@ -15,8 +15,7 @@ class RandomProjectApp : public AppNative {
 	void dS();
 	void draw();
     
-    float mMouseX;
-    float mMouseY;
+    Vec2f mMousePosition;
     
     std::list<PaintSpot> mPaintSpots;
 };
@@ -30,9 +29,8 @@ void RandomProjectApp::setup(){
 }
 
 void RandomProjectApp::mouseDown( MouseEvent event ){
-    mMouseX = event.getX();
-    mMouseY = event.getY();
-    PaintSpot mPaintSpot = PaintSpot( mMouseX, mMouseY );
+    mMousePosition = event.getPos();
+    PaintSpot mPaintSpot = PaintSpot( mMousePosition );
     mPaintSpot.createVectors();
     mPaintSpots.push_back( mPaintSpot );
 }
