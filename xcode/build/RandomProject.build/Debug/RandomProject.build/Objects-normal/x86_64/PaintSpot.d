@@ -1,4 +1,4 @@
-dependencies: /Users/kathleen/RandomProject/xcode/PaintSpot.cpp \
-  /Users/kathleen/RandomProject/xcode/PaintSpot.h \
-  ../../Downloads/cinder_0.8.6_mac/include/cinder/Perlin.h \
-  ../../Downloads/cinder_0.8.6_mac/include/cinder/Rand.h
+dependencies: /Users/Kat/GaussianPaint/xcode/PaintSpot.cpp \
+  /Users/Kat/GaussianPaint/xcode/PaintSpot.h \
+  /Users/Kat/Cinder/include/cinder/Perlin.h \
+  /Users/Kat/Cinder/include/cinder/Rand.h
